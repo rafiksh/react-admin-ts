@@ -7,6 +7,7 @@ let ar = {
   // landing: landingNameSpace.ar,
   common: {
     HELLO: "مرحبا",
+    CURRENT_LANGUAGE: "ar",
   },
 };
 
