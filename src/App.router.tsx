@@ -1,25 +1,28 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const AppRouter = () => {
-  return (
-    <Router>
-      {/* App main routing switch */}
-      <Switch>
-        {/* TODO remove the coming demo routes and add your's */}
-        <Route exact path="/" component={() => <>home</>} />
-        <Route exact path="/hi" component={() => <>hi</>} />
-        <Route exact path="/bye" component={() => <>bye</>} />
+  const { i18n, t } = useTranslation(["common"]);
 
-        {/* TODO This block handles unmatched routes. Add your custom 404 component */}
-        <Route path="/404" render={() => <div>page not found</div>} />
-        <Redirect to="/404" />
-      </Switch>
-    </Router>
+  const toggleLanguage = () =>
+    i18n.changeLanguage(i18n.language === "en" ? "ar" : "en");
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              {t("HELLO")}{" "}
+              <button onClick={toggleLanguage}>{t("CURRENT_LANGUAGE")}</button>
+            </>
+          }
+        />
+        <Route path="/home" element={<>Home</>} />
+        <Route path="/about" element={<>About</>} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
