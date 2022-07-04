@@ -6,7 +6,7 @@ let ar = {
   // /** landing namespace */
   // landing: landingNameSpace.ar,
   common: {
-    HEMO: "سين",
+    HELLO: "مرحبا",
   },
 };
 

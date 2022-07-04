@@ -6,7 +6,7 @@ let en = {
   /** landing namespace */
   // landing: landingNameSpace.en,
   common: {
-    HEMO: "Hemo",
+    HELLO: "HELLO",
   },
 };
 
